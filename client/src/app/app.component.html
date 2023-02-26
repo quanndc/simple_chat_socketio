@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="roomId" placeholder="Enter room id...">
+<input type="text" [(ngModel)]="username" placeholder="Exter your name">
+<button (click)="joinRoom(roomId)">Join in</button>
+
+<input #send id="send" type="text" [(ngModel)]="newMessage" placeholder="Enter you message...">
+<button (click)="sendMessage()">Send</button>
+
+
+  <div *ngFor="let prevMsg of this.prevMessages">
+    <p>{{prevMsg.from}}</p>
+    <p>{{prevMsg.data}}</p>
+  </div>
+<div *ngFor="let msg of this.messages">
+  <p>{{msg.from}}</p>
+  <p>{{msg.data}}</p>
+</div>
+
+<router-outlet></router-outlet>
